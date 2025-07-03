@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página com 3 Iframes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Showcase de Landing Pages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -14,300 +14,336 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #ffffff;
+            background: white;
             min-height: 100vh;
             padding: 20px;
-            color: #333;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e1e5e9;
         }
 
         h1 {
             text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        .iframe-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 20px;
-            height: 600px;
-        }
-
-        .iframe-container {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            overflow: hidden;
-            border: 1px solid #e1e5e9;
-        }
-
-        .iframe-container:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-            border-color: #3498db;
-        }
-
-        .iframe-container:first-child {
-            grid-column: 1 / -1;
-            grid-row: 1;
-        }
-
-        .iframe-container h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.1em;
-            font-weight: 600;
-            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: 300;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 15px;
         }
 
-        .iframe-container h3 i {
-            color: #3498db;
-            font-size: 1.2em;
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .showcase-item {
+            background: #f8f9fa;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .showcase-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .showcase-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .showcase-item:hover .showcase-header::before {
+            left: 100%;
+        }
+
+        .showcase-header h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .showcase-header .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            background: white;
         }
 
         iframe {
             width: 100%;
-            height: calc(100% - 55px);
+            height: 100%;
             border: none;
-            border-radius: 6px;
-            background: #f8f9fa;
-            border: 1px solid #dee2e6;
+            display: block;
+            background: white;
         }
 
-        .controls {
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.3s ease;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .fullscreen-section {
+            margin-top: 50px;
             text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        .btn {
-            background: #3498db;
+        .fullscreen-section h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        .fullscreen-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .fullscreen-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 12px 20px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 500;
+            padding: 15px 30px;
+            border-radius: 50px;
             cursor: pointer;
-            margin: 0 5px 10px 5px;
+            font-size: 1rem;
+            font-weight: 500;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
 
-        .btn:hover {
-            background: #2980b9;
+        .fullscreen-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+
+        .fullscreen-btn:active {
             transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
         }
 
-        .btn:active {
-            transform: translateY(0);
+        .cafe-btn {
+            background: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
         }
 
-        .btn.secondary {
-            background: #95a5a6;
+        .cafe-btn:hover {
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.5);
         }
 
-        .btn.secondary:hover {
-            background: #7f8c8d;
+        .flor-btn {
+            background: linear-gradient(135deg, #FF69B4 0%, #FF1493 100%);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
         }
 
-        .btn.danger {
-            background: #e74c3c;
+        .flor-btn:hover {
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
         }
 
-        .btn.danger:hover {
-            background: #c0392b;
+        .portfolio-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
 
-        .url-input select {
-            padding: 12px 16px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            margin-right: 10px;
-            font-size: 14px;
-            font-family: inherit;
-            background: white;
-            cursor: pointer;
-        }
-
-        .url-input select:focus {
-            outline: none;
-            border-color: #3498db;
+        .portfolio-btn:hover {
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
         }
 
         @media (max-width: 768px) {
-            .iframe-grid {
+            .showcase-grid {
                 grid-template-columns: 1fr;
-                grid-template-rows: repeat(3, 1fr);
-                height: 900px;
+                gap: 20px;
             }
-
-            .iframe-container:first-child {
-                grid-column: 1;
-                grid-row: 1;
+            
+            .iframe-container {
+                height: 600px;
             }
-
-            .url-input input {
-                width: 250px;
-                margin-bottom: 10px;
-            }
-
+            
             h1 {
-                font-size: 2em;
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .fullscreen-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .fullscreen-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .iframe-container {
+                height: 500px;
+            }
+            
+            .showcase-header {
+                padding: 15px;
+            }
+            
+            .showcase-header h2 {
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1><i class="fas fa-th-large"></i> Gerenciador de Iframes</h1>
+        <h1>
+            <i class="fas fa-laptop-code"></i>
+            Showcase de Landing Pages
+        </h1>
         
-        <div class="iframe-grid">
-            <div class="iframe-container">
-                <h3><i class="fas fa-map-marked-alt"></i>Cafeteria</h3>
-                <iframe id="iframe1" src="https://lanocafe-demo.vercel.app/" title="cafeteria"></iframe>
+        <div class="showcase-grid">
+            <div class="showcase-item">
+                <div class="showcase-header">
+                    <h2><i class="fas fa-coffee"></i> Cafeteria</h2>
+                </div>
+                <div class="iframe-container">
+                    <div class="loading-overlay">
+                        <div class="loading-spinner"></div>
+                    </div>
+                    <iframe src="https://lanocafe-demo.vercel.app/" title="Lano Café - Cafeteria Artesanal"></iframe>
+                </div>
             </div>
-            
-            <div class="iframe-container">
-                <h3><i class="fab fa-wikipedia-w"></i>Floricultura</h3>
-                <iframe id="iframe2" src="https://floresce-vida.vercel.app/" title="floricultura"></iframe>
+
+            <div class="showcase-item">
+                <div class="showcase-header">
+                    <h2><i class="fas fa-seedling"></i> Floricultura</h2>
+                </div>
+                <div class="iframe-container">
+                    <div class="loading-overlay">
+                        <div class="loading-spinner"></div>
+                    </div>
+                    <iframe src="https://floresce-vida.vercel.app/" title="Floricultura"></iframe>
+                </div>
             </div>
-            
-            <div class="iframe-container">
-                <h3><i class="fab fa-youtube"></i>Portfolio</h3>
-                <iframe id="iframe3" src="https://gustavo-dev-aboutme.vercel.app/" title="portfolio"></iframe>
+
+            <div class="showcase-item">
+                <div class="showcase-header">
+                    <h2><i class="fas fa-user-tie"></i> Portfólio</h2>
+                </div>
+                <div class="iframe-container">
+                    <div class="loading-overlay">
+                        <div class="loading-spinner"></div>
+                    </div>
+                    <iframe src="https://gustavo-dev-aboutme.vercel.app/" title="Gustavo Dev - Portfólio"></iframe>
+                </div>
             </div>
         </div>
 
-        <div class="controls">
-            <button class="btn" onclick="refreshIframes()">
-                <i class="fas fa-sync-alt"></i> Atualizar Todos
-            </button>
-            <button class="btn secondary" onclick="toggleFullscreen()">
-                <i class="fas fa-expand"></i> Tela Cheia
-            </button>
+        <div class="fullscreen-section">
+            <h2><i class="fas fa-expand-arrows-alt"></i> Visualizar em Tela Cheia</h2>
+            <div class="fullscreen-buttons">
+                <a href="https://lanocafe-demo.vercel.app/" target="_blank" class="fullscreen-btn cafe-btn">
+                    <i class="fas fa-coffee"></i> Cafeteria
+                </a>
+                <a href="https://floresce-vida.vercel.app/" target="_blank" class="fullscreen-btn flor-btn">
+                    <i class="fas fa-seedling"></i> Floricultura
+                </a>
+                <a href="https://gustavo-dev-aboutme.vercel.app/" target="_blank" class="fullscreen-btn portfolio-btn">
+                    <i class="fas fa-user-tie"></i> Gustavo Dev Portfolio
+                </a>
+            </div>
         </div>
-
-
     </div>
 
     <script>
-        let isFullscreen = false;
-        
-        // URLs aleatórias para demonstração
-        const randomUrls = [
-            'https://www.google.com',
-            'https://www.wikipedia.org',
-            'https://www.github.com',
-            'https://www.stackoverflow.com',
-            'https://www.mozilla.org',
-            'https://www.w3schools.com'
-        ];
-
-        function refreshIframes() {
+        // Remove loading overlay when iframe loads
+        document.addEventListener('DOMContentLoaded', function() {
             const iframes = document.querySelectorAll('iframe');
+            
             iframes.forEach(iframe => {
-                const currentSrc = iframe.src;
-                iframe.src = '';
-                setTimeout(() => {
-                    iframe.src = currentSrc;
-                }, 100);
-            });
-            
-            // Feedback visual
-            const btn = event.target;
-            const icon = btn.querySelector('i');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-check"></i> Atualizado!';
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-            }, 1500);🔄 Atualizar Todos';
-            }, 1500);
-        }
-
-        function toggleFullscreen() {
-            const container = document.querySelector('.iframe-grid');
-            
-            if (!isFullscreen) {
-                container.style.position = 'fixed';
-                container.style.top = '0';
-                container.style.left = '0';
-                container.style.width = '100vw';
-                container.style.height = '100vh';
-                container.style.zIndex = '9999';
-                container.style.background = 'rgba(0, 0, 0, 0.95)';
-                container.style.padding = '20px';
-                isFullscreen = true;
-                
-                event.target.innerHTML = '<i class="fas fa-compress"></i> Sair da Tela Cheia';
-            } else {
-                container.style.position = 'static';
-                container.style.background = 'transparent';
-                container.style.padding = '0';
-                container.style.width = 'auto';
-                container.style.height = '600px';
-                isFullscreen = false;
-                
-                event.target.innerHTML = '<i class="fas fa-expand"></i> Tela Cheia';
-            }
-        }
-        // Adiciona efeitos de hover aos iframes
-        document.querySelectorAll('.iframe-container').forEach(container => {
-            container.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.02)';
-            });
-            
-            container.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Tecla ESC para sair do fullscreen
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isFullscreen) {
-                toggleFullscreen();
-            }
-        });
-
-        // Efeito de loading inicial
-        window.addEventListener('load', function() {
-            const containers = document.querySelectorAll('.iframe-container');
-            containers.forEach((container, index) => {
-                container.style.opacity = '0';
-                container.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    container.style.transition = 'all 0.6s ease';
-                    container.style.opacity = '1';
-                    container.style.transform = 'translateY(0)';
-                }, index * 200);
+                iframe.addEventListener('load', function() {
+                    const loadingOverlay = this.parentElement.querySelector('.loading-overlay');
+                    if (loadingOverlay) {
+                        loadingOverlay.style.opacity = '0';
+                        setTimeout(() => {
+                            loadingOverlay.style.display = 'none';
+                        }, 300);
+                    }
+                });
             });
         });
     </script>
