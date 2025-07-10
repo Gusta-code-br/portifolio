@@ -643,6 +643,144 @@
             .hero{
                 margin-top: 15%;
             }
+            .container {
+
+                padding: 0 0rem !important;
+            }
+        }
+
+        .section-projetos {
+            padding: 100px 0;
+            background-color: #0f0f0f;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .titulo-secao::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #6c63ff, #ff6384);
+        }
+
+        .descricao-secao {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card-projeto {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card-projeto::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6c63ff, #ff6384);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card-projeto:hover {
+            transform: translateY(-8px);
+            border-color: rgba(108, 99, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-projeto:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-projeto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            filter: brightness(0.9);
+            transition: filter 0.3s ease;
+        }
+
+        .card-projeto:hover img {
+            filter: brightness(1);
+        }
+
+        .card-projeto h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .card-projeto p {
+            color: #b0b0b0;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .btn-ver {
+            display: inline-block;
+            background: linear-gradient(135deg, #6c63ff, #ff6384);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-ver::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-ver:hover::before {
+            left: 100%;
+        }
+
+        .btn-ver:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
         }
     </style>
 </head>
@@ -751,93 +889,36 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projetos" class="section-projetos">
         <div class="container">
-            <h2 class="section-title">Projetos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Sistema de Ordens de Serviço</h3>
-                        <p class="project-description">
-                            Plataforma completa de controle de ordens de serviço, clientes e valores.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React CRA</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">Docker</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://client-control-mu.vercel.app/" class="project-link primary">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo
-                            </a>
-                            <a href="#" class="project-link secondary">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
+            <h2 class="titulo-secao">Projetos</h2>
+            <p class="descricao-secao">
+                Conheça algumas das landing pages que desenvolvi com foco em design responsivo, performance e conversão.
+            </p>
+            <div class="projetos-grid">
+                <div class="card-projeto">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=200&fit=crop" alt="Landing Page Cafeteria">
+                    <h3>Cafeteria</h3>
+                    <p>Landing page moderna para uma cafeteria, com destaque para produtos e ambiente acolhedor.</p>
+                    <a href="https://lanocafe-demo.vercel.app/" target="_blank" class="btn-ver">Ver Projeto</a>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fa-solid fa-window-maximize"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Landing Pages</h3>
-                        <p class="project-description">
-                            Landing pages (Páginas de apresentação) profissionais para todos os nichos, com design moderno, responsivo e focado em resultados.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="landing-pages.html" class="project-link primary">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo
-                            </a>
-                            <a href="#" class="project-link secondary">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
+                <div class="card-projeto">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=200&fit=crop" alt="Landing Page Floricultura">
+                    <h3>Floricultura</h3>
+                    <p>Design clean e delicado para atrair clientes apaixonados por flores e plantas decorativas.</p>
+                    <a href="https://floresce-vida.vercel.app/" target="_blank" class="btn-ver">Ver Projeto</a>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">App Mobile</h3>
-                        <p class="project-description">
-                            Aplicativo mobile multiplataforma com funcionalidades offline, 
-                            sincronização de dados e interface intuitiva.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">SQLite</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link primary">
-                                <i class="fas fa-external-link-alt"></i>
-                                Demo
-                            </a>
-                            <a href="#" class="project-link secondary">
-                                <i class="fab fa-github"></i>
-                                Código
-                            </a>
-                        </div>
-                    </div>
+                <div class="card-projeto">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=200&fit=crop" alt="Landing Page Restaurante">
+                    <h3>Restaurante</h3>
+                    <p>Página atrativa com cores quentes, ideal para apresentar cardápio, ambiente e promoções.</p>
+                    <a href="https://restaurante-red-omega.vercel.app/" target="_blank" class="btn-ver">Ver Projeto</a>
+                </div>
+                <div class="card-projeto">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&h=200&fit=crop" alt="Landing Page Barbearia">
+                    <h3>Barbearia</h3>
+                    <p>Design urbano e estiloso com foco em agendamentos e apresentação dos serviços.</p>
+                    <a href="https://barbershop-nu-smoky.vercel.app/" target="_blank" class="btn-ver">Ver Projeto</a>
                 </div>
             </div>
         </div>
