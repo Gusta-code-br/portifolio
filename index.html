@@ -191,6 +191,7 @@
             section { padding: 3.5rem 1.2rem; }
         }
     </style>
+    <link rel="stylesheet" href="assets/motion.css">
 </head>
 <body>
 
@@ -233,7 +234,10 @@
             </div>
         </div>
     </div>
+    <div class="scroll-hint">scroll<i></i></div>
 </section>
+
+<div class="marquee" id="stack-marquee" data-items="Python|Node.js|React|Flutter|PHP · Laravel|Java|PostgreSQL|MySQL|MCP · IA|WhatsApp Business API|NF-e · SEFAZ|Google Maps API|CodeIgniter|Automação|Integrações"></div>
 
 <section id="sobre" class="about-bg">
     <div class="inner">
@@ -296,7 +300,7 @@
                     </a>
                 </div>
                 <div class="proj-featured-preview">
-                    <div class="iframe-overlay" id="iframeOverlay">
+                    <div class="iframe-overlay" id="iframeOverlay" data-cur="view" data-cur-label="abrir">
                         <a href="https://vendeunomas.com" target="_blank" class="iframe-overlay-btn"><i class="fas fa-external-link-alt"></i> Abrir site completo</a>
                     </div>
                     <iframe src="https://vendeunomas.com" title="VendeUnomas" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
@@ -323,7 +327,7 @@
                     </a>
                 </div>
                 <div class="proj-featured-preview">
-                    <div class="iframe-overlay">
+                    <div class="iframe-overlay" data-cur="view" data-cur-label="abrir">
                         <a href="./mcp-cupom.html" target="_blank" class="iframe-overlay-btn"><i class="fas fa-play-circle"></i> Abrir demo completa</a>
                     </div>
                     <iframe src="./mcp-cupom.html" title="MCP Cupom Fiscal Demo" loading="lazy"></iframe>
@@ -367,7 +371,7 @@
                     </a>
                 </div>
                 <div class="proj-featured-preview">
-                    <div class="iframe-overlay">
+                    <div class="iframe-overlay" data-cur="view" data-cur-label="abrir">
                         <a href="./erp-demo.html" target="_blank" class="iframe-overlay-btn"><i class="fas fa-mobile-alt"></i> Abrir demo completa</a>
                     </div>
                     <iframe src="./erp-demo.html" title="ERP Mobile Demo" loading="lazy"></iframe>
@@ -378,7 +382,56 @@
     </div>
 </section>
 
-
+<!-- ===== PROCESSO — narrativa dirigida pelo scroll ===== -->
+<section class="process" id="processo">
+    <div class="process-track">
+        <div class="process-sticky">
+            <div class="process-inner">
+                <div>
+                    <div class="sec-label">Como eu trabalho</div>
+                    <h2 class="sec-title" style="margin-bottom:2rem;">Do problema<br>ao sistema rodando</h2>
+                    <div class="process-rail">
+                        <div class="p-step">
+                            <span class="p-num">01</span>
+                            <h4>Entender o negócio</h4>
+                            <p>Antes de qualquer linha de código, eu mapeio o processo real: onde trava, quanto custa e o que dá para automatizar.</p>
+                        </div>
+                        <div class="p-step">
+                            <span class="p-num">02</span>
+                            <h4>Desenhar a solução</h4>
+                            <p>Arquitetura, integrações e escopo definidos com clareza — você sabe exatamente o que vai receber e em quanto tempo.</p>
+                        </div>
+                        <div class="p-step">
+                            <span class="p-num">03</span>
+                            <h4>Construir com entregas</h4>
+                            <p>Desenvolvimento em ciclos curtos, com versões navegáveis desde o início. Nada de sumir por três meses.</p>
+                        </div>
+                        <div class="p-step">
+                            <span class="p-num">04</span>
+                            <h4>Integrar e validar</h4>
+                            <p>APIs, WhatsApp, SEFAZ, pagamentos e IA conectados e testados com dados reais antes de ir ao ar.</p>
+                        </div>
+                        <div class="p-step">
+                            <span class="p-num">05</span>
+                            <h4>Colocar no ar e evoluir</h4>
+                            <p>Deploy, monitoramento e suporte. O sistema entra em produção e continua melhorando com o uso.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-stage">
+                    <div class="p-ring r1"><b></b></div>
+                    <div class="p-ring r2"><b></b></div>
+                    <div class="p-visual"><div class="p-orb"><i class="fas fa-magnifying-glass-chart"></i></div></div>
+                    <div class="p-visual"><div class="p-orb"><i class="fas fa-drafting-compass"></i></div></div>
+                    <div class="p-visual"><div class="p-orb"><i class="fas fa-code"></i></div></div>
+                    <div class="p-visual"><div class="p-orb"><i class="fas fa-plug-circle-check"></i></div></div>
+                    <div class="p-visual"><div class="p-orb"><i class="fas fa-rocket"></i></div></div>
+                </div>
+            </div>
+            <div class="process-bar"><i></i></div>
+        </div>
+    </div>
+</section>
 
 <section id="experiencia">
     <div class="inner">
@@ -481,5 +534,6 @@ window.addEventListener('scroll',()=>{
     else{nav.style.borderBottomColor='rgba(255,255,255,0.07)';}
 });
 </script>
+<script src="assets/motion.js"></script>
 </body>
 </html>

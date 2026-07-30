@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><style>html,body{margin:0;background:#0a0a0f}iframe{display:block;border:0}</style></head><body>
+<iframe id="f" src="/index.html" style="width:1440px;height:900px"></iframe>
+<script>
+const y = parseInt(new URLSearchParams(location.search).get('y') || '0', 10);
+const f = document.getElementById('f');
+f.onload = () => {
+  const w = f.contentWindow;
+  let n = 0;
+  const t = setInterval(() => { w.scrollTo(0, y); if (++n > 40) clearInterval(t); }, 100);
+};
+</script></body></html>
