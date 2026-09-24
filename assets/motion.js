@@ -105,7 +105,7 @@
 
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, p.r, 0, 6.2832);
-                ctx.fillStyle = 'rgba(167,139,250,.42)';
+                ctx.fillStyle = 'rgba(110,168,255,.42)';
                 ctx.fill();
             }
 
@@ -118,8 +118,8 @@
                         ctx.beginPath();
                         ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
                         ctx.strokeStyle = near
-                            ? `rgba(124,106,247,${(1 - d / 128) * .42})`
-                            : `rgba(140,130,200,${(1 - d / 128) * .13})`;
+                            ? `rgba(47,111,237,${(1 - d / 128) * .42})`
+                            : `rgba(120,150,210,${(1 - d / 128) * .13})`;
                         ctx.lineWidth = near ? 1 : .7;
                         ctx.stroke();
                     }

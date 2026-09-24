@@ -10,16 +10,16 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #0a0a0f; --bg2: #111118; --surface: #16161e; --surface2: #1e1e28;
-            --border: rgba(255,255,255,0.07); --accent: #7c6af7; --accent2: #a78bfa;
-            --accent-glow: rgba(124,106,247,0.18); --green: #34d399; --text: #f0f0f8;
-            --muted: #8888aa; --tag-bg: rgba(124,106,247,0.12); --tag-border: rgba(124,106,247,0.3);
+            --bg: #0a0b0f; --bg2: #0f1116; --surface: #14161c; --surface2: #1b1e26;
+            --border: rgba(255,255,255,0.07); --accent: #2f6fed; --accent2: #6ea8ff;
+            --accent-glow: rgba(47,111,237,0.18); --green: #34d399; --text: #f0f0f8;
+            --muted: #8b93a7; --tag-bg: rgba(47,111,237,0.12); --tag-border: rgba(47,111,237,0.3);
         }
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
         /* NAVBAR */
-        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(10,10,15,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(10,11,15,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 1rem 0; }
         .nav-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
         .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--text); text-decoration: none; }
         .logo span { color: var(--accent); }
@@ -30,7 +30,7 @@
 
         /* HERO */
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 7rem 2rem 4rem; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(124,106,247,0.12) 0%, transparent 70%); pointer-events: none; }
+        .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(47,111,237,0.12) 0%, transparent 70%); pointer-events: none; }
         .hero-inner { max-width: 1160px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 420px; gap: 5rem; align-items: center; }
         .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--tag-bg); border: 1px solid var(--tag-border); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; color: var(--accent2); margin-bottom: 1.5rem; }
         .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
@@ -50,7 +50,7 @@
         .stat-label { font-size: 0.85rem; color: var(--muted); }
         .stat-value { font-weight: 700; font-size: 1rem; }
         .stat-value.green { color: var(--green); }
-        .stat-value.purple { color: var(--accent2); }
+        .stat-value.accent { color: var(--accent2); }
         .stack-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
         .stack-pill { background: var(--tag-bg); border: 1px solid var(--tag-border); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; color: var(--accent2); }
 
@@ -79,7 +79,7 @@
         .proj-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; }
         .proj-badge { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 4px; margin-left: 0.5rem; }
         .proj-badge.active { background: rgba(52,211,153,0.15); color: var(--green); }
-        .proj-badge.cto { background: rgba(124,106,247,0.2); color: var(--accent2); }
+        .proj-badge.cto { background: rgba(47,111,237,0.2); color: var(--accent2); }
         .proj-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.6; flex: 1; }
         .proj-impact { background: var(--surface2); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.85rem; color: var(--green); display: flex; align-items: flex-start; gap: 0.5rem; }
         .proj-impact i { margin-top: 2px; flex-shrink: 0; }
@@ -96,8 +96,8 @@
         .proj-featured-info { padding: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
         .proj-featured-preview { border-left: 1px solid var(--border); background: var(--bg); overflow: hidden; position: relative; min-height: 380px; }
         .proj-featured-preview iframe { width: 100%; height: 100%; border: none; transform-origin: top left; }
-        .iframe-overlay { position: absolute; inset: 0; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; background: rgba(10,10,15,0.5); transition: opacity 0.3s; }
-        .iframe-overlay:hover { background: rgba(10,10,15,0.2); }
+        .iframe-overlay { position: absolute; inset: 0; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; background: rgba(10,11,15,0.5); transition: opacity 0.3s; }
+        .iframe-overlay:hover { background: rgba(10,11,15,0.2); }
         .iframe-overlay-btn { background: var(--accent); color: white; padding: 0.8rem 1.8rem; border-radius: 10px; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
 
         /* MOCK INTERATIVO */
@@ -110,14 +110,14 @@
         /* Chat mock */
         .chat-window { background: #0f1117; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); }
         .chat-header { background: #1a1f2e; padding: 0.8rem 1rem; display: flex; align-items: center; gap: 0.7rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
-        .chat-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #7c6af7, #34d399); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: white; flex-shrink: 0; }
+        .chat-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #2f6fed, #34d399); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: white; flex-shrink: 0; }
         .chat-hname { font-size: 0.85rem; font-weight: 600; }
         .chat-hstatus { font-size: 0.7rem; color: var(--green); }
         .chat-body { padding: 1rem; display: flex; flex-direction: column; gap: 0.7rem; min-height: 200px; }
         .chat-msg { max-width: 80%; padding: 0.6rem 0.9rem; border-radius: 12px; font-size: 0.82rem; line-height: 1.4; }
         .chat-msg.user { background: #1e3a5f; align-self: flex-end; border-bottom-right-radius: 4px; }
         .chat-msg.bot { background: #1a1f2e; align-self: flex-start; border-bottom-left-radius: 4px; }
-        .chat-msg.system { background: rgba(124,106,247,0.15); border: 1px solid var(--tag-border); align-self: center; text-align: center; font-size: 0.75rem; color: var(--accent2); border-radius: 8px; }
+        .chat-msg.system { background: rgba(47,111,237,0.15); border: 1px solid var(--tag-border); align-self: center; text-align: center; font-size: 0.75rem; color: var(--accent2); border-radius: 8px; }
         .chat-msg.typing { color: var(--muted); font-style: italic; }
         .chat-input-bar { padding: 0.8rem 1rem; background: #1a1f2e; border-top: 1px solid rgba(255,255,255,0.06); display: flex; gap: 0.5rem; align-items: center; }
         .chat-input-fake { flex: 1; background: rgba(255,255,255,0.05); border-radius: 20px; padding: 0.45rem 0.9rem; font-size: 0.8rem; color: var(--muted); }
@@ -134,7 +134,7 @@
         .erp-row-label { font-size: 0.78rem; color: var(--muted); }
         .erp-row-val { font-size: 0.82rem; font-weight: 600; }
         .erp-row-val.green { color: var(--green); }
-        .erp-row-val.purple { color: var(--accent2); }
+        .erp-row-val.accent { color: var(--accent2); }
         .erp-row-val.late { color: #f87171; }
         .erp-divider { height: 1px; background: var(--border); margin: 0.3rem 0; }
         .erp-total { display: flex; justify-content: space-between; padding: 0.7rem 0.8rem; background: var(--accent-glow); border-radius: 8px; border: 1px solid var(--tag-border); }
@@ -233,7 +233,7 @@
         <div class="hero-card">
             <div class="hero-card-title">Resumo</div>
             <div class="stat-row">
-                <div class="stat-item"><span class="stat-label">Experiência</span><span class="stat-value purple">5+ anos</span></div>
+                <div class="stat-item"><span class="stat-label">Experiência</span><span class="stat-value accent">5+ anos</span></div>
                 <div class="stat-item"><span class="stat-label">Hoje</span><span class="stat-value green">Full-stack pleno · GDC Tecnologia</span></div>
                 <div class="stat-item"><span class="stat-label">Foco</span><span class="stat-value">Web, integrações e automação</span></div>
                 <div class="stat-item"><span class="stat-label">Formato</span><span class="stat-value">Remoto · vaga ou freela</span></div>
@@ -333,7 +333,7 @@
                         <div class="erp-body">
                             <div class="erp-row"><span class="erp-row-label">Corolla XEi · Funilaria</span><span class="erp-row-val green">No prazo</span></div>
                             <div class="erp-row"><span class="erp-row-label">Hilux SRV · Higienização</span><span class="erp-row-val green">Entregue</span></div>
-                            <div class="erp-row"><span class="erp-row-label">Yaris XS · Polimento</span><span class="erp-row-val purple">Vence amanhã</span></div>
+                            <div class="erp-row"><span class="erp-row-label">Yaris XS · Polimento</span><span class="erp-row-val accent">Vence amanhã</span></div>
                             <div class="erp-row"><span class="erp-row-label">SW4 Diamond · Funilaria</span><span class="erp-row-val late">2 dias atrasado</span></div>
                             <div class="erp-divider"></div>
                             <div class="erp-total"><span class="erp-total-label"><i class="fab fa-whatsapp"></i> Aviso de atraso enviado ao prestador</span></div>
@@ -616,7 +616,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 // Navbar scroll effect
 window.addEventListener('scroll',()=>{
     const nav=document.querySelector('.navbar');
-    if(window.scrollY>50){nav.style.borderBottomColor='rgba(124,106,247,0.2)';}
+    if(window.scrollY>50){nav.style.borderBottomColor='rgba(47,111,237,0.2)';}
     else{nav.style.borderBottomColor='rgba(255,255,255,0.07)';}
 });
 </script>
