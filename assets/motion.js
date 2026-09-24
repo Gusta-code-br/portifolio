@@ -223,6 +223,7 @@
             ['.skills-wrap',              'up',   .1],
             ['.proj-featured',            'blur',  0],
             ['.tl-item',                  'left',  0],
+            ['.path-card',                'up',    0],
             ['.contact-form-wrap',        'right', 0],
             ['.contact-channels',         'left',  0],
             ['.channel-item',             'up',    0],
@@ -259,7 +260,7 @@
         });
 
         // Cards com tilt/spotlight
-        $$('.proj-featured, .channel-item, .stat-item').forEach(c => c.classList.add('fx-card'));
+        $$('.proj-featured, .channel-item, .stat-item, .path-card').forEach(c => c.classList.add('fx-card'));
 
         const targets = $$('[data-reveal], [data-clip], [data-split="done"]');
         if (!('IntersectionObserver' in window)) {
