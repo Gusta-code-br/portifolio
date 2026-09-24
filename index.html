@@ -307,7 +307,7 @@
                         </div>
                     </div>
                     <p class="proj-desc">Sistema para garagens e revendas controlarem os seminovos que vão para preparação (funilaria, higienização e outros serviços). Cada veículo tem status, prazo e prestador responsável. O prestador atualiza o andamento por um portal próprio, sem precisar de login, e a loja recebe os avisos pelo WhatsApp.</p>
-                    <div class="proj-impact"><i class="fas fa-arrow-trend-up"></i><span>Usado por algumas garagens. A loja importa a planilha que já usava e passa a acompanhar tudo em um lugar só.</span></div>
+                    <div class="proj-impact"><i class="fas fa-chart-line"></i><span>Usado por algumas garagens. A loja importa a planilha que já usava e passa a acompanhar tudo em um lugar só.</span></div>
                     <ul class="proj-list">
                         <li>Multi-empresa e multi-loja, com perfis e permissões por módulo</li>
                         <li>Importação de .xlsx com mapeamento de colunas</li>
@@ -355,7 +355,7 @@
                         </div>
                     </div>
                     <p class="proj-desc">Plataforma de atendimento e vendas pelo WhatsApp Business (API oficial da Meta). Um agente de IA conversa com o cliente, marca horário no Google Calendar e registra tudo num CRM. Também gera landing pages, faz campanhas de recuperação de clientes e recebe pagamentos pela dLocal.</p>
-                    <div class="proj-impact"><i class="fas fa-arrow-trend-up"></i><span>Em produção. Trabalho na arquitetura e no desenvolvimento, do backend em Node.js ao painel em React.</span></div>
+                    <div class="proj-impact"><i class="fas fa-chart-line"></i><span>Em produção. Trabalho na arquitetura e no desenvolvimento, do backend em Node.js ao painel em React.</span></div>
                     <div class="proj-tags">
                         <span class="proj-tag">Node.js</span><span class="proj-tag">WhatsApp API Meta</span><span class="proj-tag">GPT-4o</span>
                         <span class="proj-tag">CRM</span><span class="proj-tag">React</span><span class="proj-tag">dLocal</span><span class="proj-tag">Google Calendar API</span>
@@ -382,7 +382,7 @@
                         <span class="proj-title">MCP · Cupom Fiscal + Mercado Pago</span>
                     </div>
                     <p class="proj-desc">Servidor MCP que liga um agente de IA ao Mercado Pago e a uma impressora fiscal. O cliente faz o pedido pelo chat, paga no checkout transparente e o cupom sai impresso sozinho.</p>
-                    <div class="proj-impact"><i class="fas fa-arrow-trend-up"></i><span>Pedido, pagamento e cupom fiscal no mesmo fluxo, sem precisar de alguém no caixa.</span></div>
+                    <div class="proj-impact"><i class="fas fa-chart-line"></i><span>Pedido, pagamento e cupom fiscal no mesmo fluxo, sem precisar de alguém no caixa.</span></div>
                     <div class="proj-tags">
                         <span class="proj-tag">MCP</span><span class="proj-tag">Python</span><span class="proj-tag">IA</span>
                         <span class="proj-tag">Mercado Pago API</span><span class="proj-tag">Impressora Fiscal</span><span class="proj-tag">WhatsApp API</span>
@@ -409,7 +409,7 @@
                         <span class="proj-title">MCP · Agendamento para Clínica</span>
                     </div>
                     <p class="proj-desc">Servidor MCP que conecta um agente de IA ao sistema de agendamento de uma clínica. O paciente marca a consulta conversando, e o horário já entra na agenda interna.</p>
-                    <div class="proj-impact"><i class="fas fa-arrow-trend-up"></i><span>Agendamento fora do horário comercial, sem depender da recepção.</span></div>
+                    <div class="proj-impact"><i class="fas fa-chart-line"></i><span>Agendamento fora do horário comercial, sem depender da recepção.</span></div>
                     <div class="proj-tags">
                         <span class="proj-tag">MCP</span><span class="proj-tag">Node.js</span><span class="proj-tag">IA</span><span class="proj-tag">Integração de sistemas</span>
                     </div>
@@ -423,13 +423,19 @@
                 <div class="proj-featured-info">
                     <div style="display:flex;align-items:center;gap:0.7rem;">
                         <div class="proj-icon"><i class="fas fa-store"></i></div>
-                        <div><span class="proj-title">FIS Mobile · ERP para Comércio</span><span class="proj-badge">Projeto pausado</span></div>
+                        <div><span class="proj-title">FIS Mobile · ERP para Comércio</span><span class="proj-badge active">Em produção</span></div>
                     </div>
-                    <p class="proj-desc">App Flutter para pequenos comércios: importa o XML da NF-e de compra, controla estoque, pedidos e financeiro. Por enquanto roda só no aparelho. Integração com backend e emissão de nota ficaram para uma próxima fase.</p>
-                    <div class="proj-impact"><i class="fas fa-arrow-trend-up"></i><span>Pausado por enquanto, para eu focar no Automind.</span></div>
+                    <p class="proj-desc">App Android e iOS para pequenos comércios tocarem a gestão pelo celular. A entrada de mercadoria é feita importando o XML da NF-e de compra, e a venda sai com leitor de código de barras, do orçamento ao pedido faturado.</p>
+                    <div class="proj-impact"><i class="fas fa-chart-line"></i><span>Estoque, vendas e financeiro no celular, sem precisar de computador no balcão.</span></div>
+                    <ul class="proj-list">
+                        <li>Formação de preço de venda, inclusive em lote</li>
+                        <li>Estoque com kardex, contagem física e alerta de estoque mínimo</li>
+                        <li>Contas a pagar e receber, com conciliação bancária por extrato OFX/CSV</li>
+                        <li>Tributações, formas de pagamento e certificado A1 configuráveis</li>
+                    </ul>
                     <div class="proj-tags">
-                        <span class="proj-tag">Flutter</span><span class="proj-tag">XML NF-e</span><span class="proj-tag">Estoque</span>
-                        <span class="proj-tag">Persistência local</span>
+                        <span class="proj-tag">Flutter</span><span class="proj-tag">Riverpod</span><span class="proj-tag">go_router</span>
+                        <span class="proj-tag">NF-e 4.00 (XML)</span><span class="proj-tag">Código de barras</span><span class="proj-tag">Persistência local</span>
                     </div>
                     <a href="./erp-demo.html" target="_blank" class="btn-main" style="align-self:flex-start;margin-top:0.5rem;font-size:0.9rem;padding:0.7rem 1.4rem;">
                         <i class="fas fa-mobile-alt"></i> Ver demo interativa
@@ -439,7 +445,7 @@
                     <div class="iframe-overlay" data-cur="view" data-cur-label="abrir">
                         <a href="./erp-demo.html" target="_blank" class="iframe-overlay-btn"><i class="fas fa-mobile-alt"></i> Abrir demo completa</a>
                     </div>
-                    <iframe src="./erp-demo.html" title="ERP Mobile Demo" loading="lazy"></iframe>
+                    <iframe src="./erp-demo.html" title="FIS Mobile Demo" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -486,10 +492,10 @@
                 <div class="process-stage">
                     <div class="p-ring r1"><b></b></div>
                     <div class="p-ring r2"><b></b></div>
-                    <div class="p-visual"><div class="p-orb"><i class="fas fa-magnifying-glass-chart"></i></div></div>
+                    <div class="p-visual"><div class="p-orb"><i class="fas fa-magnifying-glass"></i></div></div>
                     <div class="p-visual"><div class="p-orb"><i class="fas fa-drafting-compass"></i></div></div>
                     <div class="p-visual"><div class="p-orb"><i class="fas fa-code"></i></div></div>
-                    <div class="p-visual"><div class="p-orb"><i class="fas fa-plug-circle-check"></i></div></div>
+                    <div class="p-visual"><div class="p-orb"><i class="fas fa-plug"></i></div></div>
                     <div class="p-visual"><div class="p-orb"><i class="fas fa-rocket"></i></div></div>
                 </div>
             </div>
